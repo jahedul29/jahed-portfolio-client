@@ -1,0 +1,29 @@
+.navbar-nav a {
+  width: 100px;
+  color: #fff !important;
+  position: relative;
+  margin: auto;
+}
+
+.navbar-nav a:hover {
+  color: #4dc5af !important;
+}
+
+.navbar-nav a:hover:after {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  width: 70%;
+  padding-top: 5px;
+  left: 15%;
+  position: absolute;
+  border-bottom: 2px solid #4dc5af;
+}
+
+.navbar-resume-btn {
+  background-color: transparent !important;
+  outline: 1px #4dc5af !important;
+  color: #4dc5af !important;
+  width: 150px;
+  margin: auto;
+}
