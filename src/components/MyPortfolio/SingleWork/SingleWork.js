@@ -36,7 +36,7 @@ const SingleWork = (props) => {
           </Col>
         </Row>
         <div className="work-img">
-          <img src={work.photo} alt={work.name} />
+          <img src={work.photo_url} alt={work.name} />
         </div>
         <div className="p-2">
           <h4 className="gray-text">{work.name}</h4>

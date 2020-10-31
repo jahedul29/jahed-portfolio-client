@@ -9,23 +9,33 @@ import {
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Col, Container, FormGroup, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import myDetails from "../../../fakedata/mydetails";
 import "./GetInTouch.css";
 import Fade from "react-reveal/Fade";
+import { AdminContext } from "../../../App";
 
 const GetInTouch = () => {
   const { register, handleSubmit, watch, errors } = useForm();
-  const [info, setInfo] = useState({});
+  const { adminDetails } = useContext(AdminContext);
 
-  useEffect(() => {
-    const loadedData = myDetails;
-    setInfo(loadedData);
-  }, []);
-
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    fetch("http://localhost:5000/sendMessage", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data) {
+          document.getElementById("contact-form").reset();
+          alert("Your message sent successfully");
+        } else {
+          alert("Error! Something went wrong");
+        }
+      });
+  };
   return (
     <section className="py-5" id="getInTouch">
       <Container className="py-5">
@@ -42,32 +52,40 @@ const GetInTouch = () => {
               <div className="getInTouch-icon pb-3">
                 <p>
                   <FontAwesomeIcon icon={faMarker}></FontAwesomeIcon>
-                  &nbsp;&nbsp;{info.address}
+                  &nbsp;&nbsp;{adminDetails.address}
                 </p>
                 <p>
                   <FontAwesomeIcon icon={faMailBulk}></FontAwesomeIcon>
-                  &nbsp;&nbsp;{info.mail}
+                  &nbsp;&nbsp;{adminDetails.mail}
                 </p>
                 <p>
                   <FontAwesomeIcon icon={faPhone}></FontAwesomeIcon>
-                  &nbsp;&nbsp;{info.phone}
+                  &nbsp;&nbsp;{adminDetails.phone}
                 </p>
               </div>
 
               <div className="pt-5">
-                <a href={info.github} rel="noreferrer" target="_blank">
+                <a href={adminDetails.github} rel="noreferrer" target="_blank">
                   <FontAwesomeIcon
                     className="big-icon"
                     icon={faGithub}
                   ></FontAwesomeIcon>
                 </a>
-                <a href={info.linkedIn} rel="noreferrer" target="_blank">
+                <a
+                  href={adminDetails.linkedIn}
+                  rel="noreferrer"
+                  target="_blank"
+                >
                   <FontAwesomeIcon
                     className="big-icon"
                     icon={faLinkedin}
                   ></FontAwesomeIcon>
                 </a>
-                <a href={info.facebook} rel="noreferrer" target="_blank">
+                <a
+                  href={adminDetails.facebook}
+                  rel="noreferrer"
+                  target="_blank"
+                >
                   <FontAwesomeIcon
                     className="big-icon"
                     icon={faFacebook}
@@ -78,6 +96,7 @@ const GetInTouch = () => {
             <Col className="my-2" xs={12} md={6} lg={6}>
               <div className="form-container pt-4">
                 <form
+                  id="contact-form"
                   className="contact-form"
                   onSubmit={handleSubmit(onSubmit)}
                 >

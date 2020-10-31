@@ -1,16 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Nav, Navbar, Button } from "react-bootstrap";
-import myDetails from "../../fakedata/mydetails";
+import { AdminContext } from "../../App";
 import "./MyNavbar.css";
 
 const MyNavbar = () => {
   const [isSticky, setIsSticky] = useState(false);
-  const [info, setInfo] = useState({});
+  const { adminDetails } = useContext(AdminContext);
 
-  useEffect(() => {
-    const loadedData = myDetails;
-    setInfo(loadedData);
-  }, []);
   useEffect(() => {
     if (window.scrollY > 30) {
       setIsSticky(true);
@@ -34,7 +30,7 @@ const MyNavbar = () => {
           <Nav.Link href="#getInTouch">Contact</Nav.Link>
 
           <Button
-            href={info.resume}
+            href={adminDetails.resume}
             target="_blank"
             className="navbar-resume-btn"
           >

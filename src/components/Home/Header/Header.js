@@ -5,31 +5,35 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faArrowUp, faMailBulk } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
-import myDetails from "../../../fakedata/mydetails";
+import { AdminContext } from "../../../App";
 import "./Header.css";
 
 const Header = () => {
-  const [info, setInfo] = useState({});
+  const { adminDetails, setAdminDetails } = useContext(AdminContext);
 
   useEffect(() => {
-    const loadedData = myDetails;
-    setInfo(loadedData);
+    fetch("http://localhost:5000/getAdmin")
+      .then((res) => res.json())
+      .then((data) => {
+        data.aboutMe = data.aboutMe.split("\n");
+        setAdminDetails(data);
+      });
   }, []);
 
   return (
     <header id="header">
       <div className="header-text w-100 w-lg-75 py-4 ">
         <h4 className="main-title">Hi, I am</h4>
-        <h1>{info.name}</h1>
+        <h1>{adminDetails.name}</h1>
         <br />
-        <h2 className="text-secondary">{info.designation}</h2>
+        <h2 className="text-secondary">{adminDetails.designation}</h2>
         <br />
-        <p className="text-secondary">{info.summary}</p>
+        <p className="text-secondary">{adminDetails.summary}</p>
         <br />
         <Button
-          href={`https://mail.google.com/mail/?view=cm&fs=1&to=${info.mail}`}
+          href={`https://mail.google.com/mail/?view=cm&fs=1&to=${adminDetails.mail}`}
           target="_blank"
           className="main-button"
         >
@@ -38,26 +42,26 @@ const Header = () => {
       </div>
       <div className="d-none d-lg-block">
         <div className="d-flex flex-column sticky-icon-container ">
-          <a href={info.github} rel="noreferrer" target="_blank">
+          <a href={adminDetails.github} rel="noreferrer" target="_blank">
             <FontAwesomeIcon
               className="sticky-icon"
               icon={faGithub}
             ></FontAwesomeIcon>
           </a>
-          <a href={info.linkedIn} rel="noreferrer" target="_blank">
+          <a href={adminDetails.linkedIn} rel="noreferrer" target="_blank">
             <FontAwesomeIcon
               className="sticky-icon"
               icon={faLinkedin}
             ></FontAwesomeIcon>
           </a>
-          <a href={info.facebook} rel="noreferrer" target="_blank">
+          <a href={adminDetails.facebook} rel="noreferrer" target="_blank">
             <FontAwesomeIcon
               className="sticky-icon"
               icon={faFacebook}
             ></FontAwesomeIcon>
           </a>
           <a
-            href={`https://mail.google.com/mail/?view=cm&fs=1&to=${info.mail}`}
+            href={`https://mail.google.com/mail/?view=cm&fs=1&to=${adminDetails.mail}`}
             rel="noreferrer"
             target="_blank"
           >
