@@ -1,0 +1,49 @@
+header h1 {
+  font-size: 60px;
+}
+header {
+  height: 560px;
+  color: white;
+  text-align: center;
+}
+.header-text {
+  margin-top: 120px;
+}
+.main-title {
+  color: #4dc5af;
+}
+.main-button {
+  background-color: transparent !important;
+  color: #4dc5af !important;
+  border-radius: 10px;
+  border: 1px solid #4dc5af;
+  width: 150px;
+}
+
+.sticky-icon-container {
+  position: fixed;
+  top: 300px;
+  left: 30px;
+}
+
+.sticky-icon {
+  margin: 20% 2%;
+  font-size: 25px;
+  color: #41a796;
+}
+
+.line {
+  width: 1px;
+  background-color: #4dc5af;
+  height: 130px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.fixed-button {
+  color: #4dc5af !important;
+  background-color: #2f383f !important;
+  border-radius: 15px !important;
+  position: fixed;
+  right: 50px;
+}

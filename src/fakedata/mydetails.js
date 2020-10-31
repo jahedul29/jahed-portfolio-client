@@ -11,6 +11,9 @@ const myDetails = {
   facebook: "https://web.facebook.com/jahedul.hoque.79",
   resume:
     "https://drive.google.com/file/d/1CdM3xSd_MG8z69hu8lmQgvr-0GxYv5rB/view?usp=sharing",
+  address: "Chittagong, Bangladesh",
+  phone: "+8801861270125",
+  mail: "jahedulh1@gmail.com",
 };
 
 export default myDetails;

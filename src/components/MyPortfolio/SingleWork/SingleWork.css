@@ -1,0 +1,35 @@
+.work-img {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  padding: 8px;
+}
+.single-work {
+  background-color: #172a45 !important;
+  padding: 1%;
+  height: 400px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.single-work:hover {
+  transform: translateY(-10px);
+}
+
+.work-img img {
+  width: 100%;
+}
+.work-icon {
+  font-size: 25px;
+  color: rgb(173, 165, 165);
+  margin: 1px 10px;
+}
+
+.gray-text {
+  color: #b3bad3;
+}
+
+.bottom-text {
+  position: relative;
+  bottom: -5px;
+  font-weight: 500;
+}

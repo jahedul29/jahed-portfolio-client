@@ -1,21 +1,26 @@
+.navbar {
+  height: 80px;
+}
+
 .navbar-nav a {
   width: 100px;
   color: #fff !important;
   position: relative;
   margin: auto;
+  text-align: center;
 }
 
 .navbar-nav a:hover {
   color: #4dc5af !important;
 }
 
-.navbar-nav a:hover:after {
+.nav-link:hover:after {
   content: "";
   display: block;
   margin: 0 auto;
-  width: 70%;
+  width: 60%;
   padding-top: 5px;
-  left: 15%;
+  left: 20%;
   position: absolute;
   border-bottom: 2px solid #4dc5af;
 }
