@@ -5,9 +5,10 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faArrowUp, faMailBulk } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { Button } from "react-bootstrap";
 import { AdminContext } from "../../../App";
+import MyNavbar from "../../MyNavbar/MyNavbar";
 import "./Header.css";
 
 const Header = () => {
@@ -20,7 +21,7 @@ const Header = () => {
         data.aboutMe = data.aboutMe.split("\n");
         setAdminDetails(data);
       });
-  }, []);
+  }, [setAdminDetails]);
 
   return (
     <header id="header">

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row } from "react-bootstrap";
-import myWorks from "../../fakedata/myPortfolio";
 import SingleWork from "./SingleWork/SingleWork";
 import Fade from "react-reveal/Fade";
 
@@ -8,8 +7,9 @@ const MyPortfolio = () => {
   const [works, setWorks] = useState([]);
 
   useEffect(() => {
-    const loadedData = myWorks;
-    setWorks(loadedData);
+    fetch("http://localhost:5000/getProjects")
+      .then((res) => res.json())
+      .then((data) => setWorks(data));
   }, []);
 
   return (
@@ -20,7 +20,7 @@ const MyPortfolio = () => {
           <br />
           <Row>
             {works.map((work) => (
-              <SingleWork work={work}></SingleWork>
+              <SingleWork key={work._id} work={work}></SingleWork>
             ))}
           </Row>
         </Fade>

@@ -1,19 +1,10 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { Nav, Navbar, Button } from "react-bootstrap";
 import { AdminContext } from "../../App";
 import "./MyNavbar.css";
 
 const MyNavbar = () => {
-  const [isSticky, setIsSticky] = useState(false);
   const { adminDetails } = useContext(AdminContext);
-
-  useEffect(() => {
-    if (window.scrollY > 30) {
-      setIsSticky(true);
-    } else {
-      setIsSticky(false);
-    }
-  }, []);
 
   return (
     <Navbar id="navbar" collapseOnSelect expand="lg">

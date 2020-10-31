@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import "./AboutMe.css";
 import Fade from "react-reveal/Fade";
@@ -18,11 +18,15 @@ const AboutMe = () => {
           <Row>
             <Col xs={12} lg={6} className="text-left">
               {aboutMe &&
-                aboutMe.map((par) => <p className="aboutMe-text">{par}</p>)}
+                aboutMe.map((par, index) => (
+                  <p key={index} className="aboutMe-text">
+                    {par}
+                  </p>
+                ))}
             </Col>
             <Col xs={12} lg={6} className="my-4">
               <div className="text-center about-img-container">
-                <div className="mask"></div>
+                <div className="mask d-none d-lg-block"></div>
                 <img src={adminDetails.photo_url} alt="Jahedul Hoque" />
               </div>
             </Col>

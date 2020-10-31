@@ -1,5 +1,5 @@
 import { faGithub, faYoutube } from "@fortawesome/free-brands-svg-icons";
-import { faExternalLinkAlt, faVideo } from "@fortawesome/free-solid-svg-icons";
+import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Col, Row } from "react-bootstrap";
@@ -35,8 +35,8 @@ const SingleWork = (props) => {
             </a>
           </Col>
         </Row>
-        <div className="work-img">
-          <img src={work.photo_url} alt={work.name} />
+        <div className="work-img-container">
+          <img className="work-img" src={work.photo} alt={work.name} />
         </div>
         <div className="p-2">
           <h4 className="gray-text">{work.name}</h4>

@@ -9,7 +9,7 @@ import {
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { Col, Container, FormGroup, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import "./GetInTouch.css";
@@ -17,7 +17,7 @@ import Fade from "react-reveal/Fade";
 import { AdminContext } from "../../../App";
 
 const GetInTouch = () => {
-  const { register, handleSubmit, watch, errors } = useForm();
+  const { register, handleSubmit, errors } = useForm();
   const { adminDetails } = useContext(AdminContext);
 
   const onSubmit = (data) => {
@@ -42,14 +42,14 @@ const GetInTouch = () => {
         <Fade bottom>
           <h2 className="main-title text-center mb-5">Get In Touch</h2>
           <Row>
-            <Col className="pt-4 my-2" xs={12} md={6} lg={6}>
+            <Col className="pt-4 my-2 " xs={12} md={6} lg={6}>
               <p className="gray-text">
                 If you want to know more about anything. You can contact with
                 me. You can also give me opinion about my page. My inbox is
                 always open for you. I will try my best to reply all of your
                 message
               </p>
-              <div className="getInTouch-icon pb-3">
+              <div className="getInTouch-icon pb-md-3">
                 <p>
                   <FontAwesomeIcon icon={faMarker}></FontAwesomeIcon>
                   &nbsp;&nbsp;{adminDetails.address}
@@ -64,7 +64,7 @@ const GetInTouch = () => {
                 </p>
               </div>
 
-              <div className="pt-5">
+              <div className="pt-lg-5">
                 <a href={adminDetails.github} rel="noreferrer" target="_blank">
                   <FontAwesomeIcon
                     className="big-icon"
@@ -93,7 +93,7 @@ const GetInTouch = () => {
                 </a>
               </div>
             </Col>
-            <Col className="my-2" xs={12} md={6} lg={6}>
+            <Col className="my-2 mt-sm-4" xs={12} md={6} lg={6}>
               <div className="form-container pt-4">
                 <form
                   id="contact-form"

@@ -1,3 +1,5 @@
 .home {
   background-color: #10273a;
+  width: 100%;
+  border: 2px solid orange;
 }

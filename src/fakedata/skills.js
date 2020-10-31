@@ -9,23 +9,23 @@ const skillSet = [
   },
   {
     type: "JavaScript",
-    level: 90,
+    level: 80,
   },
   {
-    type: "React",
-    level: 90,
+    type: "Node.js",
+    level: 70,
   },
   {
-    type: "React",
-    level: 90,
+    type: "MongoDB",
+    level: 70,
   },
   {
-    type: "React",
-    level: 90,
+    type: "MS SQL",
+    level: 80,
   },
   {
-    type: "React",
-    level: 90,
+    type: "Git",
+    level: 85,
   },
 ];
 

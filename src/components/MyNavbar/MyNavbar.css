@@ -1,5 +1,6 @@
-.navbar {
+#navbar {
   height: 80px;
+  width: 100%;
 }
 
 .navbar-nav a {
@@ -31,4 +32,20 @@
   color: #4dc5af !important;
   width: 150px;
   margin: auto;
+}
+
+@media only screen and (max-width: 770px) {
+  .navbar-nav {
+    background-color: #0a1824 !important;
+    padding: 10px 5px;
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  #navbar {
+    padding: 10px 20px !important;
+  }
+  .navbar-toggler {
+    outline: 0px !important;
+  }
 }
