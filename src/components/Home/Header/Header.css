@@ -50,11 +50,25 @@ header {
   right: 50px;
 }
 
+.typewriter-span {
+  color: #17c761;
+  font-size: 25px;
+}
+@media only screen and (max-width: 770px) {
+  .fixed-button {
+    right: 50px;
+    z-index: 1;
+  }
+}
 @media only screen and (max-width: 430px) {
   header {
     height: 500px;
   }
   .header-text {
     margin-top: 50px;
+  }
+  .fixed-button {
+    right: 50px;
+    z-index: 1;
   }
 }

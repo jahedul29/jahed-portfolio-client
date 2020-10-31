@@ -10,6 +10,16 @@ import { Button } from "react-bootstrap";
 import { AdminContext } from "../../../App";
 import MyNavbar from "../../MyNavbar/MyNavbar";
 import "./Header.css";
+import Typical from "react-typical";
+import Particles from "react-particles-js";
+
+const styles = {
+  part: {
+    height: "100%",
+    width: "100%",
+    position: "absolute",
+  },
+};
 
 const Header = () => {
   const { adminDetails, setAdminDetails } = useContext(AdminContext);
@@ -25,13 +35,38 @@ const Header = () => {
 
   return (
     <header id="header">
+      <div style={styles.part}>
+        <Particles />
+      </div>
       <div className="header-text w-100 w-lg-75 py-4 ">
         <h4 className="main-title">Hi, I am</h4>
         <h1>{adminDetails.name}</h1>
         <br />
         <h2 className="text-secondary">{adminDetails.designation}</h2>
         <br />
-        <p className="text-secondary">{adminDetails.summary}</p>
+        <h5 className="text-secondary">
+          I Work in{" "}
+          <span className="typewriter-span">
+            <Typical
+              steps={[
+                "React.js",
+                2000,
+                "Asp.Net",
+                2000,
+                "Node.js",
+                2000,
+                "MongoDB",
+                2000,
+                "MS Sql Server",
+                2000,
+                "JavaScript(ES6)",
+                2000,
+              ]}
+              loop={Infinity}
+              wrapper="span"
+            />
+          </span>
+        </h5>
         <br />
         <Button
           href={`https://mail.google.com/mail/?view=cm&fs=1&to=${adminDetails.mail}`}
