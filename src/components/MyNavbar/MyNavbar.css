@@ -36,12 +36,16 @@
 
 @media only screen and (max-width: 770px) {
   .navbar-nav {
-    background-color: #0a1824 !important;
+    background-color: #04090e !important;
     padding: 10px 5px;
+    z-index: 1 !important;
   }
+  /* .navbar-toggle-icon {
+    margin-right: 50px;
+  } */
 }
 
-@media only screen and (max-width: 430px) {
+@media only screen and (max-width: 400px) {
   #navbar {
     padding: 10px 20px !important;
   }

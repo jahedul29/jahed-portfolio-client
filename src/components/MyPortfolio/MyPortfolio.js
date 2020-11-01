@@ -7,7 +7,7 @@ const MyPortfolio = () => {
   const [works, setWorks] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/getProjects")
+    fetch("https://jahed-portfolio-server.herokuapp.com/getProjects")
       .then((res) => res.json())
       .then((data) => setWorks(data));
   }, []);

@@ -26,7 +26,12 @@ const Skills = () => {
         <Fade bottom>
           <h2 className="main-title">Skill Set</h2>
           <div className="mt-5 px-lg-5">
-            <SkillBar skills={skills} height={25} colors={colors} />
+            <SkillBar
+              skills={skills}
+              height={25}
+              colors={colors}
+              animationDelay={2000}
+            />
           </div>
         </Fade>
       </Container>
