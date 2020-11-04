@@ -1,0 +1,21 @@
+.project-button-container button {
+  background-color: transparent !important;
+  color: #4dc5af !important;
+  padding: 1% 1%;
+  width: 20%;
+  border: 0px;
+  border-radius: 0px !important;
+}
+
+.project-button-container button:focus {
+  background-color: transparent;
+  border-left: 5px solid #4dc5af;
+}
+.project-button-container button:focus {
+  outline: 0px;
+}
+
+.project-button-container {
+  width: 70%;
+  margin: auto;
+}

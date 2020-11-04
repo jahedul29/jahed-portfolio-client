@@ -7,14 +7,16 @@ import MyNavbar from "../MyNavbar/MyNavbar";
 import Header from "./Header/Header";
 import AboutMe from "./AboutMe/AboutMe";
 import Skills from "./Skills/Skills";
+import Blogs from "./Blogs/Blogs/Blogs";
 
 const Home = () => {
   return (
-    <div className="home">
+    <div className="mainBackground">
       <MyNavbar></MyNavbar>
       <Header />
       <AboutMe />
       <MyPortfolio />
+      <Blogs />
       <Skills />
       <GetInTouch />
       <Footer />

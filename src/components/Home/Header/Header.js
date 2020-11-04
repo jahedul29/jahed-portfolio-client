@@ -25,7 +25,7 @@ const Header = () => {
   const { adminDetails, setAdminDetails } = useContext(AdminContext);
 
   useEffect(() => {
-    fetch("https://jahed-portfolio-server.herokuapp.com/getAdmin")
+    fetch("http://localhost:5000/getAdmin")
       .then((res) => res.json())
       .then((data) => {
         data.aboutMe = data.aboutMe.split("\n");
@@ -36,7 +36,7 @@ const Header = () => {
   return (
     <header id="header">
       <div style={styles.part}>
-        <Particles height="500px" />
+        <Particles height="550px" />
       </div>
       <div className="header-text w-100 w-lg-75 py-4 ">
         <h4 className="main-title">Hi, I am</h4>

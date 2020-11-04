@@ -1,0 +1,28 @@
+.dashboard-content-container {
+  background-color: #10273a;
+}
+
+.dashboard-content {
+  background-color: #061727;
+  height: 90vh;
+}
+
+.main-form {
+  width: 60%;
+  padding: 40px;
+}
+
+.main-form input,
+.main-form select,
+.main-form textarea {
+  margin: 15px 0;
+  background-color: #c1cad1;
+}
+
+.input-btn {
+  height: 40px;
+}
+
+.error {
+  color: red;
+}

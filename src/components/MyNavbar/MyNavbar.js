@@ -1,14 +1,20 @@
 import React, { useContext } from "react";
 import { Nav, Navbar, Button } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
 import { AdminContext } from "../../App";
 import "./MyNavbar.css";
 
 const MyNavbar = () => {
   const { adminDetails } = useContext(AdminContext);
+  let history = useHistory();
 
   return (
     <Navbar id="navbar" collapseOnSelect expand="lg">
-      <Navbar.Brand style={{ color: "#4DC5AF" }} href="#home">
+      <Navbar.Brand
+        onClick={() => history.push("/")}
+        style={{ color: "#4DC5AF" }}
+        href="#home"
+      >
         Jahed
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />

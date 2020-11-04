@@ -60,6 +60,13 @@ header {
     z-index: 1;
   }
 }
+
+@media only screen and (max-width: 430px) {
+  header {
+    height: 595px;
+  }
+}
+
 @media only screen and (max-width: 400px) {
   header {
     height: 580px;

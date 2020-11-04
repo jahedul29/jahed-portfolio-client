@@ -21,7 +21,7 @@ const GetInTouch = () => {
   const { adminDetails } = useContext(AdminContext);
 
   const onSubmit = (data) => {
-    fetch("https://jahed-portfolio-server.herokuapp.com/sendMessage", {
+    fetch("http://localhost:5000/sendMessage", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
