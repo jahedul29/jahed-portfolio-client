@@ -9,7 +9,9 @@ const MyPortfolio = () => {
   let history = useHistory();
 
   useEffect(() => {
-    fetch("http://localhost:5000/getProjects?status=featured")
+    fetch(
+      "https://jahed-portfolio-server.herokuapp.com/getProjects?status=featured"
+    )
       .then((res) => res.json())
       .then((data) => setFeaturedWorks(data));
   }, []);

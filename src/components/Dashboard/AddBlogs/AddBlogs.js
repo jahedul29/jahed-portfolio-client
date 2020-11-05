@@ -6,7 +6,7 @@ import Sidebar from "../Sidebar/Sidebar";
 const AddBlogs = () => {
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = (data) => {
-    fetch("http://localhost:5000/addBlog", {
+    fetch("https://jahed-portfolio-server.herokuapp.com/addBlog", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),

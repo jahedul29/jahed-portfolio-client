@@ -9,14 +9,17 @@ const AllPortfolios = () => {
   const [allWorks, setAllWorks] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/getProjects")
+    fetch("https://jahed-portfolio-server.herokuapp.com/getProjects")
       .then((res) => res.json())
       .then((data) => setAllWorks(data));
   }, []);
 
   const handleFilterBtnClick = (e) => {
     const category = e.target.value === "all" ? "" : e.target.value;
-    fetch("http://localhost:5000/getProjects?category=" + category)
+    fetch(
+      "https://jahed-portfolio-server.herokuapp.com/getProjects?category=" +
+        category
+    )
       .then((res) => res.json())
       .then((data) => setAllWorks(data));
   };
