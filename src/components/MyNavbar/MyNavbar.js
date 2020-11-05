@@ -15,7 +15,11 @@ const MyNavbar = () => {
         style={{ color: "#4DC5AF" }}
         href="#home"
       >
-        Jahed
+        <img
+          className="navbar-img"
+          src="https://i.imgur.com/NMu6WTT.png"
+          alt=""
+        />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
