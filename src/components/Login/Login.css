@@ -6,7 +6,7 @@
   color: rgb(208, 210, 219);
 }
 
-.form-container {
+.login-form-container {
   margin: auto;
   height: 350px;
   width: 400px;
@@ -44,7 +44,7 @@
 }
 
 @media only screen and (max-width: 430px) {
-  .form-container {
+  .login-form-container {
     width: 95%;
     margin: auto;
   }

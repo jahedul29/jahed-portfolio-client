@@ -1,3 +1,7 @@
 .swiper-wrapper {
   width: 350px !important;
 }
+
+.see-all-button {
+  width: 300px;
+}

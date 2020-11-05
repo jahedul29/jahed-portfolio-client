@@ -23,13 +23,11 @@ const Sidebar = () => {
   let history = useHistory();
 
   const signOut = () => {
-    handleSignOut()
-      .then((res) => res.json())
-      .then((data) => {
-        setLoggedInUser(data);
-        sessionStorage.removeItem("dental-token");
-        history.replace("/");
-      });
+    handleSignOut().then((data) => {
+      setLoggedInUser(data);
+      sessionStorage.removeItem("dental-token");
+      history.replace("/");
+    });
   };
 
   return (

@@ -30,9 +30,9 @@ const MyPortfolio = () => {
         <div className="w-100 text-center">
           <Button
             onClick={() => history.push("/portfolios")}
-            className="main-button w-25"
+            className="main-button see-all-button"
           >
-            See More
+            See All
           </Button>
         </div>
       </Container>
