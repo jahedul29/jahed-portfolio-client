@@ -25,7 +25,6 @@ const Sidebar = () => {
   const signOut = () => {
     handleSignOut().then((data) => {
       setLoggedInUser(data);
-      sessionStorage.removeItem("dental-token");
       history.replace("/");
     });
   };

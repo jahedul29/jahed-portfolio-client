@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Sidebar from "./../Sidebar/Sidebar";
 import "./AddProject.css";
@@ -6,6 +6,12 @@ import { useForm } from "react-hook-form";
 
 const AddProject = () => {
   const { register, handleSubmit, errors } = useForm();
+  const [descriptionLetterCount, setDescriptionLetterCount] = useState(200);
+
+  const onChange = (e) => {
+    setDescriptionLetterCount(e.target.value.length);
+  };
+
   const onSubmit = (data) => {
     fetch("http://localhost:5000/addProject", {
       method: "POST",
@@ -79,18 +85,27 @@ const AddProject = () => {
               {errors.photo && (
                 <span className="error">{errors.photo.message}</span>
               )}
-              <textarea
-                className="form-control"
-                rows="4"
-                placeholder="Project description"
-                name="description"
-                ref={register({
-                  required: { value: true, message: "Description required" },
-                })}
-              />
-              {errors.description && (
-                <span className="error">{errors.description.message}</span>
-              )}
+              <div className="form-group">
+                <small className="text-white">
+                  {descriptionLetterCount}/200 letter
+                </small>
+                <textarea
+                  className="form-control"
+                  onChange={onChange}
+                  rows="4"
+                  placeholder="Project description"
+                  name="description"
+                  ref={register({
+                    required: { value: true, message: "Description required" },
+                    validate: (value) =>
+                      (value.length >= 100 && value.length <= 200) ||
+                      "Description must be between 170 to 200 word",
+                  })}
+                />
+                {errors.description && (
+                  <span className="error">{errors.description.message}</span>
+                )}
+              </div>
               <input
                 className="form-control"
                 placeholder="Technologies separated by ,"

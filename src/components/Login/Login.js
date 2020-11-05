@@ -28,7 +28,6 @@ const Login = () => {
         history.push(from);
       } else {
         alert("Sorry! You don't have permission to access this page");
-        sessionStorage.removeItem("jahedportfoliotoken");
         history.push("/");
       }
     });

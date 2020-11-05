@@ -23,7 +23,6 @@ export const handleGoogleSignIn = () => {
         email: user.email,
         photo: user.photoURL,
       };
-      setSessionStorage();
       return newUser;
     })
     .catch(function (error) {
@@ -41,7 +40,6 @@ export const handleSignOut = () => {
         name: "",
         email: "",
       };
-      sessionStorage.removeItem("jahedportfoliotoken");
       return newUser;
       // Sign-out successful.
     })
@@ -51,12 +49,12 @@ export const handleSignOut = () => {
 };
 
 //Saving to sessionStorage
-const setSessionStorage = () => {
-  firebase
-    .auth()
-    .currentUser.getIdToken(/* forceRefresh */ true)
-    .then(function (idToken) {
-      sessionStorage.setItem("jahedportfoliotoken", idToken);
-    })
-    .catch(function (error) {});
-};
+// const setSessionStorage = () => {
+//   firebase
+//     .auth()
+//     .currentUser.getIdToken(/* forceRefresh */ true)
+//     .then(function (idToken) {
+//       sessionStorage.setItem("jahedportfoliotoken", idToken);
+//     })
+//     .catch(function (error) {});
+// };
