@@ -36,7 +36,27 @@ const Header = () => {
   return (
     <header id="header">
       <div style={styles.part}>
-        <Particles height="550px" />
+        <Particles
+          params={{
+            interactivity: {
+              detect_on: "window",
+              events: {
+                onhover: {
+                  enable: true,
+                  mode: "repulse",
+                },
+                resize: true,
+              },
+              modes: {
+                repulse: {
+                  distance: 100,
+                  duration: 0.4,
+                },
+              },
+            },
+          }}
+          height="550px"
+        />
       </div>
       <div className="header-text w-100 w-lg-75 py-4 ">
         <h4 className="main-title">Hi, I am</h4>

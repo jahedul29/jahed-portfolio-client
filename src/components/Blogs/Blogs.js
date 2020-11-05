@@ -22,7 +22,11 @@ const Blogs = () => {
         <div>
           <Row>
             {blogs &&
-              blogs.map((blog) => <SingleBlog key={blog._id} blog={blog} />)}
+              blogs.map((blog) => (
+                <Col md={6} lg={4} key={blog._id}>
+                  <SingleBlog key={blog._id} blog={blog} />
+                </Col>
+              ))}
           </Row>
         </div>
       </Container>

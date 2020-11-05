@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Container, Nav, Row, Button } from "react-bootstrap";
+import Footer from "../Foooter/Footer";
 import MyNavbar from "../MyNavbar/MyNavbar";
 import SingleWork from "../MyPortfolio/SingleWork/SingleWork";
 import "./AllPortfolios.css";
@@ -53,6 +54,7 @@ const AllPortfolios = () => {
           </Row>
         </div>
       </Container>
+      <Footer />
     </section>
   );
 };

@@ -12,21 +12,25 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useContext } from "react";
-import { UserContext } from "../../../App";
-import { Link } from "react-router-dom";
+import { AdminContext, UserContext } from "../../../App";
+import { Link, useHistory } from "react-router-dom";
 // import { handleSignOut } from "../../Login/loginManager";
 import "./Sidebar.css";
+import { handleSignOut } from "../../Login/loginManager";
 
 const Sidebar = () => {
-  // const { setLoggedInUser } = useContext(UserContext);
-  // const signOut = () => {
-  //   handleSignOut()
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setLoggedInUser(data);
-  //       sessionStorage.removeItem("dental-token");
-  //     });
-  // };
+  const { setLoggedInUser } = useContext(AdminContext);
+  let history = useHistory();
+
+  const signOut = () => {
+    handleSignOut()
+      .then((res) => res.json())
+      .then((data) => {
+        setLoggedInUser(data);
+        sessionStorage.removeItem("dental-token");
+        history.replace("/");
+      });
+  };
 
   return (
     <div className="sidebar">
@@ -61,7 +65,7 @@ const Sidebar = () => {
             &nbsp;&nbsp;Settings
           </Link>
         </div>
-        <Link>
+        <Link onClick={signOut}>
           <FontAwesomeIcon icon={faSignOutAlt}></FontAwesomeIcon>
           &nbsp;&nbsp;Logout
         </Link>

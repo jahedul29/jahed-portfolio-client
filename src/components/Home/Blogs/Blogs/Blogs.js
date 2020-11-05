@@ -42,8 +42,6 @@ const Blogs = () => {
             centeredSlide={false}
             navigation
             autoplay={true}
-            onSwiper={(swiper) => console.log(swiper)}
-            onSlideChange={() => console.log("slide change")}
             key={blogs && blogs.length}
           >
             {blogs &&
