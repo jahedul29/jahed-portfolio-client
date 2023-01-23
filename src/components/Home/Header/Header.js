@@ -29,6 +29,14 @@ const Header = () => {
       .then((res) => res.json())
       .then((data) => {
         data.aboutMe = data.aboutMe.split("\n");
+
+        let innerWorkIn = [];
+        const itemList = data.workIn.split(",");
+        for(let i=0; i< itemList.length; i++){
+          innerWorkIn = [...innerWorkIn, itemList[i], 2000]
+        }
+        data.workIn = innerWorkIn;
+        console.log("innerWorkIn", data)
         setAdminDetails(data);
       });
   }, [setAdminDetails]);
@@ -64,29 +72,21 @@ const Header = () => {
         <br />
         <h2 className="text-secondary">{adminDetails.designation}</h2>
         <br />
-        <h5 className="text-secondary">
-          I Work in{" "}
-          <span className="typewriter-span">
-            <Typical
-              steps={[
-                "React.js",
-                2000,
-                "Asp.Net",
-                2000,
-                "Node.js",
-                2000,
-                "MongoDB",
-                2000,
-                "MS Sql Server",
-                2000,
-                "JavaScript(ES6)",
-                2000,
-              ]}
-              loop={Infinity}
-              wrapper="span"
-            />
-          </span>
-        </h5>
+        {
+          adminDetails?.workIn && (
+            <h5 className="text-secondary">
+              I Work in{" "}
+              <span className="typewriter-span">
+                <Typical
+                  steps={adminDetails.workIn}
+                  loop={Infinity}
+                  wrapper="span"
+                />
+              </span>
+            </h5>
+          )
+        }
+        
         <br />
         <Button
           href={`https://mail.google.com/mail/?view=cm&fs=1&to=${adminDetails.mail}`}

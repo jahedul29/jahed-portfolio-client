@@ -26,7 +26,7 @@ const AboutMe = () => {
             </Col>
             <Col xs={12} lg={6} className="my-4">
               <div className="text-center about-img-container">
-                <div className="mask d-none d-lg-block"></div>
+                {/* <div className="mask d-none d-lg-block"></div> */}
                 <img src={adminDetails.photo_url} alt="Jahedul Hoque" />
               </div>
             </Col>
