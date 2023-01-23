@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Container, Nav, Row, Button } from "react-bootstrap";
+import { Container, Nav, Row } from "react-bootstrap";
+import { baseUrl } from "../../utils/config";
 import Footer from "../Foooter/Footer";
 import MyNavbar from "../MyNavbar/MyNavbar";
 import SingleWork from "../MyPortfolio/SingleWork/SingleWork";
@@ -9,7 +10,7 @@ const AllPortfolios = () => {
   const [allWorks, setAllWorks] = useState([]);
 
   useEffect(() => {
-    fetch("https://jahed-portfolio-server.herokuapp.com/getProjects")
+    fetch(`${baseUrl}getProjects`)
       .then((res) => res.json())
       .then((data) => setAllWorks(data));
   }, []);
@@ -17,7 +18,7 @@ const AllPortfolios = () => {
   const handleFilterBtnClick = (e) => {
     const category = e.target.value === "all" ? "" : e.target.value;
     fetch(
-      "https://jahed-portfolio-server.herokuapp.com/getProjects?category=" +
+      `${baseUrl}getProjects?category=` +
         category
     )
       .then((res) => res.json())

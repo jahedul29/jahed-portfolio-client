@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import { baseUrl } from "../../utils/config";
 import Footer from "../Foooter/Footer";
 import SingleBlog from "../Home/Blogs/SingleBlog/SingleBlog";
 import MyNavbar from "../MyNavbar/MyNavbar";
@@ -8,7 +9,7 @@ const Blogs = () => {
   const [blogs, setBlogs] = useState();
 
   useEffect(() => {
-    fetch("https://jahed-portfolio-server.herokuapp.com/getBlogs")
+    fetch(`${baseUrl}getBlogs`)
       .then((res) => res.json())
       .then((data) => setBlogs(data));
   }, []);

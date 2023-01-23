@@ -15,13 +15,14 @@ import { useForm } from "react-hook-form";
 import "./GetInTouch.css";
 import Fade from "react-reveal/Fade";
 import { AdminContext } from "../../../App";
+import { baseUrl } from './../../../utils/config';
 
 const GetInTouch = () => {
   const { register, handleSubmit, errors } = useForm();
   const { adminDetails } = useContext(AdminContext);
 
   const onSubmit = (data) => {
-    fetch("https://jahed-portfolio-server.herokuapp.com/sendMessage", {
+    fetch(`${baseUrl}sendMessage`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),

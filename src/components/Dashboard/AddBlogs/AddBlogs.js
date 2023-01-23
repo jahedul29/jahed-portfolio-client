@@ -2,11 +2,12 @@ import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import Sidebar from "../Sidebar/Sidebar";
+import { baseUrl } from './../../../utils/config';
 
 const AddBlogs = () => {
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = (data) => {
-    fetch("https://jahed-portfolio-server.herokuapp.com/addBlog", {
+    fetch(`${baseUrl}addBlog`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),

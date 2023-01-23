@@ -3,6 +3,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import Sidebar from "./../Sidebar/Sidebar";
 import "./AddProject.css";
 import { useForm } from "react-hook-form";
+import { baseUrl } from './../../../utils/config';
 
 const AddProject = () => {
   const { register, handleSubmit, errors } = useForm();
@@ -13,7 +14,7 @@ const AddProject = () => {
   };
 
   const onSubmit = (data) => {
-    fetch("https://jahed-portfolio-server.herokuapp.com/addProject", {
+    fetch(`${baseUrl}addProject`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
@@ -28,8 +29,6 @@ const AddProject = () => {
         }
       });
   };
-
-  console.log(errors);
 
   return (
     <Container fluid className="p-0 dashboard-content-container">

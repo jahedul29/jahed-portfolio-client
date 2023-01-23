@@ -1,18 +1,15 @@
 import {
-  faClipboard,
   faClipboardCheck,
   faCog,
   faHome,
   faList,
-  faPaste,
   faPlus,
   faSignOutAlt,
   faTh,
-  faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useContext } from "react";
-import { AdminContext, UserContext } from "../../../App";
+import { AdminContext } from "../../../App";
 import { Link, useHistory } from "react-router-dom";
 // import { handleSignOut } from "../../Login/loginManager";
 import "./Sidebar.css";

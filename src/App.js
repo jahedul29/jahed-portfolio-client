@@ -15,8 +15,6 @@ function App() {
   const [adminDetails, setAdminDetails] = useState({});
   const [loggedInUser, setLoggedInUser] = useState({});
 
-  console.log(loggedInUser);
-
   return (
     <AdminContext.Provider
       value={{ adminDetails, setAdminDetails, loggedInUser, setLoggedInUser }}

@@ -15,6 +15,7 @@ import SwiperCore, {
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import SingleBlog from "../SingleBlog/SingleBlog";
+import { baseUrl } from './../../../../utils/config';
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Autoplay, Virtual]);
 
@@ -23,7 +24,7 @@ const Blogs = () => {
   const [blogs, setBlogs] = useState();
 
   useEffect(() => {
-    fetch("https://jahed-portfolio-server.herokuapp.com/getBlogs")
+    fetch(`${baseUrl}getBlogs`)
       .then((res) => res.json())
       .then((data) => setBlogs(data));
   }, []);

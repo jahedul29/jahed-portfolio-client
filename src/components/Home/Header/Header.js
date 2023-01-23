@@ -8,10 +8,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useContext, useEffect } from "react";
 import { Button } from "react-bootstrap";
 import { AdminContext } from "../../../App";
-import MyNavbar from "../../MyNavbar/MyNavbar";
 import "./Header.css";
 import Typical from "react-typical";
 import Particles from "react-particles-js";
+import { baseUrl } from './../../../utils/config';
 
 const styles = {
   part: {
@@ -25,7 +25,7 @@ const Header = () => {
   const { adminDetails, setAdminDetails } = useContext(AdminContext);
 
   useEffect(() => {
-    fetch("https://jahed-portfolio-server.herokuapp.com/getAdmin")
+    fetch(`${baseUrl}getAdmin`)
       .then((res) => res.json())
       .then((data) => {
         data.aboutMe = data.aboutMe.split("\n");

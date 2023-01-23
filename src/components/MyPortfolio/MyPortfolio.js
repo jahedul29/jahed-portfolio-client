@@ -3,6 +3,7 @@ import { Button, Container, Row } from "react-bootstrap";
 import SingleWork from "./SingleWork/SingleWork";
 import { useHistory } from "react-router-dom";
 import Fade from "react-reveal/Fade";
+import { baseUrl } from './../../utils/config';
 
 const MyPortfolio = () => {
   const [featuredWorks, setFeaturedWorks] = useState([]);
@@ -10,7 +11,7 @@ const MyPortfolio = () => {
 
   useEffect(() => {
     fetch(
-      "https://jahed-portfolio-server.herokuapp.com/getProjects?status=featured"
+      `${baseUrl}getProjects?status=featured`
     )
       .then((res) => res.json())
       .then((data) => setFeaturedWorks(data));

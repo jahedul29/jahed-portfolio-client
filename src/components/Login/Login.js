@@ -10,9 +10,7 @@ initializeLoginFramework();
 
 const Login = () => {
   // state for storing logged in user data
-  const { loggedInUser, setLoggedInUser, adminDetails } = useContext(
-    AdminContext
-  );
+  const { setLoggedInUser, adminDetails } = useContext(AdminContext);
 
   document.title = "Login";
 
@@ -23,7 +21,7 @@ const Login = () => {
   // Function to handle google signIN
   const googleSignIn = () => {
     handleGoogleSignIn().then((res) => {
-      if (res.email === adminDetails.email) {
+      if (res.email === adminDetails.mail) {
         setLoggedInUser(res);
         history.push(from);
       } else {
@@ -32,8 +30,6 @@ const Login = () => {
       }
     });
   };
-
-  console.log("loggedInUser", loggedInUser);
 
   return (
     <Container fluid className="login-container px-0">
