@@ -1,6 +1,7 @@
 #navbar {
   height: 80px;
   width: 100%;
+  z-index: 10;
 }
 
 .navbar-img {
@@ -57,4 +58,8 @@
   .navbar-toggler {
     outline: 0px !important;
   }
+}
+
+.navbar-toggler.collapsed {
+  width: auto !important;
 }
